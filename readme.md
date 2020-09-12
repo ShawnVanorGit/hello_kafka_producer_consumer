@@ -22,8 +22,6 @@ bin/kafka-server-start.sh config/server.properties &
 ```
 确认服务是否启动？输入 `jps`命令可以查看Kafka和Zookeeper进程
 
-![image.png](/img/bVbOGjI)
-
 重新打开两个ssh窗口，分别启动生产者和消费者
 ```
 #启动生产者(Kafka的默认端口号是9092)
@@ -33,9 +31,6 @@ bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic test --from-beg
 ```
 当生产者输入信息后并回车，在消费者窗口立刻可以看到对应的消息，说明Kafka环境搭建成功！
 
-![image.png](/img/bVbOGlt)
-
-![image.png](/img/bVbOGlr)
 ###### 外网访问不了Kafka？`listeners`和 `advertised.listeners`傻傻分不清！
 
 > 需要注意的是，在本地开发之前，需要保证服务器上的 `Zookeeeper` 和 `Kafka` 服务端口都已经开放，分别需要开放的端口对应是 `2181` 和 `9092`。如果是阿里云的服务器，除了防火墙外，可能还需要修改安全组访问策略配置。
@@ -140,14 +135,8 @@ public class ConsumerDemo {
 > 1. 内网连接服务的话，就只需要 listener 配置，一般用 0.0.0.0 表示不限制;
 > 2. 对公网提供服务就需要配置 advertied.listener，也就是公网ip;
 
-![image.png](/img/bVbOGCD)
-
-再去看一下本地客户端是否成功连接
-
-![image.png](/img/bVbOGCR)
-
-到此，已成功解决本地不能访问Kafka服务的问题！
+再去看一下本地客户端是否成功连接。到此，已成功解决本地不能访问Kafka服务的问题！
 
 **同理，在 `docker` 中或者在阿里云主机上部署 `kafka` 集群时，也是需要用到 `advertised_listeners`。**
 
-具体代码请移步
+图片网页版请移步：[外网访问不了Kafka？listeners和advertised.listeners傻傻分不清!][https://segmentfault.com/a/1190000024434277]
