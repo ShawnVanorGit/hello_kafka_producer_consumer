@@ -139,4 +139,4 @@ public class ConsumerDemo {
 
 **同理，在 `docker` 中或者在阿里云主机上部署 `kafka` 集群时，也是需要用到 `advertised_listeners`。**
 
-图片网页版请移步：[外网访问不了Kafka？listeners和advertised.listeners傻傻分不清!][https://segmentfault.com/a/1190000024434277]
+图片网页版请移步：https://segmentfault.com/a/1190000024434277
